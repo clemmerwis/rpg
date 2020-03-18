@@ -2,6 +2,7 @@
 
 abstract class Character 
 {
+    public static $count = 0;
     protected $name;
     protected $id;
     protected $age;
@@ -47,6 +48,7 @@ class PC extends Character
     {
         $this->id = $id;
         $this->name = $name;
+        $this::$count++;
     }
 
     public function get_id()
@@ -82,6 +84,7 @@ class Ally extends Character
     {
         $this->id = $id;
         $this->name = $name;
+        $this::$count++;
     }
 
     public function get_id()
@@ -240,5 +243,7 @@ echo "<br>";
 echo "Dexterity Stat: " . $mara->get_stat("dex");
 echo "<br>";
 
+
+echo Character::$count;
 
 ?>
